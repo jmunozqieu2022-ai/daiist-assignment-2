@@ -14,3 +14,6 @@ runs/
 
 # Never commit your API key
 .env
+
+# Pretrained base checkpoints; Ultralytics downloads them on demand
+/yolo11*.pt

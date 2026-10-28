@@ -1,0 +1,71 @@
+{
+  "train": {
+    "images": 4916,
+    "frames_with_bare_head": 0.185313262815297,
+    "boxes_per_image": 3.769528071602929,
+    "median_width": 500,
+    "median_height": 333,
+    "per_class": {
+      "head": {
+        "instances": 4612,
+        "images_containing": 911,
+        "median_rel_side": 0.07709260471320611,
+        "p10_rel_side": 0.04613082990164386,
+        "share_small_lt_5pct": 0.146357328707719
+      },
+      "helmet": {
+        "instances": 13919,
+        "images_containing": 4503,
+        "median_rel_side": 0.09068016081958094,
+        "p10_rel_side": 0.04700044499521892,
+        "share_small_lt_5pct": 0.1274516847474675
+      }
+    }
+  },
+  "valid": {
+    "images": 1413,
+    "frames_with_bare_head": 0.18117480537862704,
+    "boxes_per_image": 3.7169143665958955,
+    "median_width": 500,
+    "median_height": 333,
+    "per_class": {
+      "head": {
+        "instances": 1339,
+        "images_containing": 256,
+        "median_rel_side": 0.07857682884034871,
+        "p10_rel_side": 0.04774806115810797,
+        "share_small_lt_5pct": 0.1262135922330097
+      },
+      "helmet": {
+        "instances": 3913,
+        "images_containing": 1297,
+        "median_rel_side": 0.09299811099505545,
+        "p10_rel_side": 0.04746679130827419,
+        "share_small_lt_5pct": 0.12241247124968055
+      }
+    }
+  },
+  "test": {
+    "images": 706,
+    "frames_with_bare_head": 0.19830028328611898,
+    "boxes_per_image": 3.7407932011331444,
+    "median_width": 500,
+    "median_height": 333,
+    "per_class": {
+      "head": {
+        "instances": 726,
+        "images_containing": 140,
+        "median_rel_side": 0.07929334989971472,
+        "p10_rel_side": 0.04900823286913459,
+        "share_small_lt_5pct": 0.1115702479338843
+      },
+      "helmet": {
+        "instances": 1915,
+        "images_containing": 636,
+        "median_rel_side": 0.090468864172241,
+        "p10_rel_side": 0.047394580346768016,
+        "share_small_lt_5pct": 0.11906005221932114
+      }
+    }
+  }
+}

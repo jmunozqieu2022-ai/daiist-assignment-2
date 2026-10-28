@@ -1,0 +1,305 @@
+{
+  "dataset": {
+    "workspace": "joseph-nelson",
+    "project": "hard-hat-workers",
+    "version": 5
+  },
+  "names": {
+    "0": "head",
+    "1": "helmet"
+  },
+  "positive_class": "head",
+  "train_args": {
+    "base_model": "yolo11n.pt",
+    "device": "cpu",
+    "epochs": 40,
+    "fraction": 1.0,
+    "imgsz": 416,
+    "batch": 32,
+    "patience": 15,
+    "seed": 0,
+    "deterministic": true,
+    "workers": 4,
+    "save_period": 5,
+    "plots": true
+  },
+  "detection": {
+    "finetuned_yolo11n": {
+      "per_class": {
+        "head": {
+          "instances": 726,
+          "ap50": 0.9465222782516182,
+          "ap50_95": 0.6608865511841362,
+          "precision": 0.8265550239234449,
+          "recall": 0.9517906336088154,
+          "tp": 691,
+          "fp": 145,
+          "fn": 35
+        },
+        "helmet": {
+          "instances": 1915,
+          "ap50": 0.9706099162553472,
+          "ap50_95": 0.6727117819681225,
+          "precision": 0.8552935737401757,
+          "recall": 0.9660574412532638,
+          "tp": 1850,
+          "fp": 313,
+          "fn": 65
+        }
+      },
+      "overall": {
+        "ap50": 0.9585660972534826,
+        "ap50_95": 0.6667991665761294
+      },
+      "conf": 0.15
+    },
+    "coco_yolo11n_zero_shot": {
+      "per_class": {
+        "head": {
+          "instances": 726,
+          "ap50": 0.07778881695194456,
+          "ap50_95": 0.01787433236500823,
+          "precision": 0.09633473889069089,
+          "recall": 0.4090909090909091,
+          "tp": 297,
+          "fp": 2786,
+          "fn": 429
+        },
+        "helmet": {
+          "instances": 1915,
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1915
+        }
+      },
+      "overall": {
+        "ap50": 0.03889440847597228,
+        "ap50_95": 0.008937166182504116
+      },
+      "conf": 0.15
+    },
+    "predict_nothing": {
+      "per_class": {
+        "head": {
+          "instances": 726,
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 726
+        },
+        "helmet": {
+          "instances": 1915,
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1915
+        }
+      },
+      "overall": {
+        "ap50": 0.0,
+        "ap50_95": 0.0
+      },
+      "conf": 0.15
+    }
+  },
+  "detection_confusion": {
+    "conf": 0.15,
+    "labels": [
+      "head",
+      "helmet",
+      "background"
+    ],
+    "matrix": [
+      [
+        687,
+        7,
+        142
+      ],
+      [
+        18,
+        1845,
+        300
+      ],
+      [
+        21,
+        63,
+        0
+      ]
+    ],
+    "rows": "predicted",
+    "cols": "true"
+  },
+  "frame": {
+    "finetuned_yolo11n": {
+      "tp": 129,
+      "fp": 19,
+      "fn": 11,
+      "tn": 547,
+      "precision": 0.8716216216216216,
+      "recall": 0.9214285714285714,
+      "accuracy": 0.9575070821529745
+    },
+    "coco_yolo11n_zero_shot": {
+      "tp": 135,
+      "fp": 431,
+      "fn": 5,
+      "tn": 135,
+      "precision": 0.23851590106007067,
+      "recall": 0.9642857142857143,
+      "accuracy": 0.38243626062322944,
+      "threshold": 0.77,
+      "cost_per_1000": 3300.782433114588
+    },
+    "majority_class_all_pass": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 140,
+      "tn": 566,
+      "precision": 0.0,
+      "recall": 0.0,
+      "accuracy": 0.8016997167138811
+    }
+  },
+  "ultralytics_test_check": {
+    "map50": 0.9653299735044769,
+    "map50_95": 0.6672781267435349,
+    "per_class_ap50": {
+      "head": 0.9556238914707265,
+      "helmet": 0.9750360555382273
+    }
+  },
+  "costs": {
+    "fn": 120.0,
+    "fp": 4.0,
+    "tp": 4.0,
+    "tn": 0.0,
+    "review": 0.15,
+    "human_accuracy": 0.97,
+    "base_rate": 0.05,
+    "frames_per_day": 3000,
+    "review_seconds": 20.0,
+    "reviewer_hours_per_day": 6.0
+  },
+  "operating_point": {
+    "model_alone": {
+      "t_low": 0.15,
+      "t_high": 0.15,
+      "pos_pass": 0.07857142857142857,
+      "pos_review": 1.1102230246251565e-16,
+      "pos_fail": 0.9214285714285714,
+      "neg_pass": 0.9664310954063604,
+      "neg_review": 1.3877787807814457e-17,
+      "neg_fail": 0.03356890459363958,
+      "cost_per_1000": 783.2761231701161,
+      "review_share": 1.8735013540549518e-17,
+      "reviews_per_day": 5.6205040621648556e-14,
+      "review_hours_per_day": 3.1225022567582533e-16,
+      "reviewers_needed": 5.204170427930422e-17
+    },
+    "band": {
+      "t_low": 0.0,
+      "t_high": 0.68,
+      "pos_pass": 0.0,
+      "pos_review": 0.19285714285714284,
+      "pos_fail": 0.8071428571428572,
+      "neg_pass": 0.0,
+      "neg_review": 0.991166077738516,
+      "neg_fail": 0.0088339222614841,
+      "cost_per_1000": 522.8065749621404,
+      "review_share": 0.9512506309944473,
+      "reviews_per_day": 2853.751892983342,
+      "review_hours_per_day": 15.854177183240788,
+      "reviewers_needed": 2.6423628638734646
+    },
+    "band_capped_one_reviewer": {
+      "t_low": 0.01,
+      "t_high": 0.68,
+      "pos_pass": 0.04285714285714286,
+      "pos_review": 0.15000000000000002,
+      "pos_fail": 0.8071428571428572,
+      "neg_pass": 0.8568904593639576,
+      "neg_review": 0.13427561837455831,
+      "neg_fail": 0.0088339222614841,
+      "cost_per_1000": 543.8070292781425,
+      "review_share": 0.1350618374558304,
+      "reviews_per_day": 405.1855123674912,
+      "review_hours_per_day": 2.25103062426384,
+      "reviewers_needed": 0.37517177071063995
+    },
+    "shipped": {
+      "t_low": 0.01,
+      "t_high": 0.68,
+      "pos_pass": 0.04285714285714286,
+      "pos_review": 0.15000000000000002,
+      "pos_fail": 0.8071428571428572,
+      "neg_pass": 0.8568904593639576,
+      "neg_review": 0.13427561837455831,
+      "neg_fail": 0.0088339222614841,
+      "cost_per_1000": 543.8070292781425,
+      "review_share": 0.1350618374558304,
+      "reviews_per_day": 405.1855123674912,
+      "review_hours_per_day": 2.25103062426384,
+      "reviewers_needed": 0.37517177071063995
+    },
+    "coco_model_alone": {
+      "t_low": 0.77,
+      "t_high": 0.77,
+      "pos_pass": 0.03571428571428571,
+      "pos_review": 0.0,
+      "pos_fail": 0.9642857142857143,
+      "neg_pass": 0.23851590106007067,
+      "neg_review": 0.0,
+      "neg_fail": 0.7614840989399293,
+      "cost_per_1000": 3300.782433114588,
+      "review_share": 0.0,
+      "reviews_per_day": 0.0,
+      "review_hours_per_day": 0.0,
+      "reviewers_needed": 0.0
+    }
+  },
+  "reviewer_fatigue": [
+    {
+      "human_accuracy": 0.97,
+      "shipped_band": 543.8070292781425,
+      "unconstrained_band": 522.8065749621404,
+      "human_checks_everything": 638.0000000000002
+    },
+    {
+      "human_accuracy": 0.95,
+      "shipped_band": 571.411976274609,
+      "unconstrained_band": 620.5066254416964,
+      "human_checks_everything": 830.0000000000005
+    },
+    {
+      "human_accuracy": 0.93,
+      "shipped_band": 599.0169232710753,
+      "unconstrained_band": 718.2066759212518,
+      "human_checks_everything": 1021.9999999999998
+    },
+    {
+      "human_accuracy": 0.9,
+      "shipped_band": 640.4243437657749,
+      "unconstrained_band": 864.7567516405857,
+      "human_checks_everything": 1309.9999999999995
+    }
+  ],
+  "alternatives": {
+    "do_nothing": 6000.0,
+    "human_checks_everything": 638.0000000000002,
+    "human_checks_everything_staff": {
+      "reviews_per_day": 3000.0,
+      "review_hours_per_day": 16.666666666666668,
+      "reviewers_needed": 2.777777777777778
+    }
+  }
+}
